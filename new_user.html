@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new user</title>
+    <style>
+        body {
+            background-image: url(1.jpeg);
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        table {
+            width: 90%;
+            margin-left: 0%;
+            margin-top: 10vh;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: rgba(28, 46, 46, 0.808);
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            border: 4px solid rgb(211, 112, 0);
+            border-radius: 10px;
+        }
+
+        td {
+            padding: 10px;
+            box-sizing:border-box;
+        }
+
+        #correct1,
+        #correct2,
+        #correct3,
+        #correct4,
+        #correct5,
+        #correct6 {
+            width: 10px;
+            height: 10px;
+            border: 4px solid white;
+            outline: 3px solid rgb(69, 180, 5);
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+        }
+
+        #scan_box {
+            width: 2cm;
+            height: 2cm;
+            border: 3px solid red;
+            border-radius: 9px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 9px;
+        }
+
+        button {
+            width: 100%;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border: 3px solid dodgerblue;
+            border-radius: 3px;
+        }
+
+        marquee {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            font-size: 30px;
+            border-bottom: 3px solid white;
+            color: white;
+            background-color: rgba(30, 143, 255, 0.267);
+            font-weight: bold;
+        }input{
+        height:1cm;
+        border:2px solid dodgerblue;
+        border-radius:8px;
+        }select{
+        width:100%;
+        font-weight:bold;
+        color:white;
+        text-align:center;
+        background-color:dodgerblue;
+        border:2px solid dodgerblue;
+        border-radius:6px;
+        }
+        #sound{
+        display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <marquee>ሃብታሙ አንዳርጌ መኪና አስመጭ እና ሻጭ</marquee>
+    <table>
+        <tr>
+            <td>ሙሉ ስም</td>
+            <td><input type="text" id="fname" onkeyup="fname()"></td>
+            <td>
+                <div id="correct1"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>የአያት ስም</td>
+            <td><input type="text" id="lname" onkeyup="lname()"></td>
+            <td>
+                <div id="correct2"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>የትዉልድ ዘመን</td>
+            <td><select name="" id="year" onchange="year()">
+                    <option value="year">year</option>
+                </select></td>
+            <td>
+                <div id="correct3"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>ፋይዳ ቀጥር FAN </td>
+            <td><input type="number" id="fan" onkeyup="fan()"></td>
+            <td>
+                <div id="correct4"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>ክልል</td>
+            <td><select name="" id="rig" onchange="rigf(this)">
+                    <option value="rig">ethiopia</option>
+                </select></td>
+            <td>
+                <div id="correct5"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>የእጅ አሻራ</td>
+            <td>
+                <div id="scan_box">
+                    <img id="green"src="finger_print.gif" onmouseover="printed()">
+                </div>
+            </td>
+            <td>
+                <div id="correct6"></div>
+            </td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td><button id="submit">መዝግብ</button></td>
+            <td>
+
+            </td>
+
+        </tr>
+    </table>
+    <audio src="scanned.mp3" 
+    controls 
+    id="sound" />
+    <script>
+        for (let i = 1910; i <= 2025; i++) {
+            document.getElementById("year").innerHTML += `
+            <option value='`+ i + `'>` + i + `</option>
+            `;
+        }
+        let lists = ["አማራ", "ትግራይ", "አፋር", "ደቡብ", "ሶማሌ"]
+        for (let i = 0; i < 5; i++) {
+            document.getElementById("rig").innerHTML += `
+            <option value='`+ lists[i] + `'>` + lists[i] + `</option>
+            `;
+        }
+
+
+
+        function printed() {
+            document.getElementById("correct6").style.backgroundColor = "green";
+            // window.vibrate(100);
+  document.getElementById("green").src="green.jpeg";
+  document.getElementById("scan_box").style.border="3px solid green";
+  document.getElementById("sound").play();
+            localStorage.setItem("printed", "true");
+        }
+        function rigf() {
+            document.getElementById("correct5").style.backgroundColor = "green";
+
+        }
+        function fan() {
+            let x = document.getElementById("fan");
+            if (x.value.length == 16) {
+
+                document.getElementById("correct4").style.backgroundColor = "green";
+            }
+        }
+        function year() {
+            document.getElementById("correct3").style.backgroundColor = "green";
+
+        }
+        function fname() {
+            let x = document.getElementById("fname");
+            if (x.value.length > 4) {
+
+                document.getElementById("correct1").style.backgroundColor = "green";
+            }
+        }
+        function lname() {
+            let x = document.getElementById("lname");
+            if (x.value.length > 3) {
+
+                document.getElementById("correct2").style.backgroundColor = "green";
+            }
+        }
+        document.getElementById("submit").addEventListener("click", function () {
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let year = document.getElementById("year").value;
+            let fan = document.getElementById("fan").value;
+            let rig = document.getElementById("rig").value;
+            let printed = localStorage.getItem("printed");
+
+            if (fname.length < 2) { alert("እብክዎ ስምዎትን ያስገቡ?") }
+            else if (lname.length < 2) { alert("የአያት ስም ያስገቡ?") }
+            else if (year == "year") { alert("እባክዎ የትዉልድ ዘመን ያስገቡ?") }
+            else if (fan.length != 16) { alert("እባክዎ ትክክለኛ ፋይዳ  FAN ቁጥር ያስገቡ?") }
+            else if (rig == "rig") { alert("እባክዎ ክልል ያስገቡ?") }
+            else if (printed != "true") { alert("የእጅ አሻራ አላስገቡም?") }
+            else {
+                localStorage.setItem("fname", "" + fname + "");
+                localStorage.setItem("lname", "" + lname + "");
+                localStorage.setItem("year", "" + year + "");
+                localStorage.setItem("fan", "" + fan + "");
+                localStorage.setItem("rig", "" + rig + "");
+                localStorage.setItem("printed", "" + printed + "");
+                document.body.innerHTML = `
+                <button style='
+                width:60%;
+                height:5vh;
+                background-color:dodgerblue;
+                border-radius:7px;
+                margin-left:30%;
+                margin-top:25vh;
+                font-size:30px;
+                font-weight:bold;
+                text-align:center;
+                border:none;
+                '>successfull</button>
+                `;
+                alert("successfull");
+                localStorage.setItem("is_new_user", "false")
+                window.location.href = "home.html";
+            }
+
+
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+{
+    "1": {
+        "name": "suzuki swift",
+        "path": "1.jpeg",
+        "model": "847aA",
+        "moter_number": 347773456509,
+        "is_new": true,
+        "price": 650000
+    },
+    "2": {
+        "name": "suzuki swift",
+        "path": "2.webp",
+        "model": "847aA",
+        "moter_number": 2945423456509,
+        "is_new": true
+    },
+    "3": {
+        "name": "suzuki swift",
+        "path": "3.jpeg",
+        "model": "847aA",
+        "moter_number": 1145423456509,
+        "is_new": true
+    },
+    "4": {
+        "name": "suzuki swift",
+        "path": "4.jpeg",
+        "model": "847aA",
+        "moter_number": 3458742345509,
+        "is_new": true
+    },
+    "5": {
+        "name": "suzuki swift",
+        "path": "5.jpeg",
+        "model": "847aA",
+        "moter_number": 3454563456509,
+        "is_new": true
+    },
+    "6": {
+        "name": "suzuki swift",
+        "path": "6.jpeg",
+        "model": "847aA",
+        "moter_number": 345423456509,
+        "is_new": true
+    },
+    "7": {
+        "name": "suzuki swift",
+        "path": "7.jpeg",
+        "model": "847aA",
+        "moter_number": 345023406509,
+        "is_new": true
+    },
+    "8": {
+        "name": "suzuki swift",
+        "path": "8.jpeg",
+        "model": "847aA",
+        "moter_number": 388423456509,
+        "is_new": true
+    },
+    "9": {
+    "name": "suzuki",
+    "path": "9.jpeg",
+    "model": "jimny 2025",
+    "moter_number": 56509,
+    "is_new": true
+    },
+    "10": {
+    "name": "suzuki",
+    "path": "10.jpeg",
+    "model": "pickup",
+    "moter_number": "38yxe423456509",
+    "is_new": true
+    },
+    "11": {
+    "name": "suzuki",
+    "path": "11.jpeg",
+    "model": "84 5-door",
+    "moter_number": "3884opr456509",
+    "is_new": true
+    },
+    "12": {
+    "name": "suzuki",
+    "path": "12.jpeg",
+    "model": "ces_2025",
+    "moter_number": "ces56509",
+    "is_new": true
+    },
+    "13": {
+    "name": "Tesla",
+    "path": "13.jpeg",
+    "model": "Tesla",
+    "moter_number": "388423456509",
+    "is_new": true
+    }
+}

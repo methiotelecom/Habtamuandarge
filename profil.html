@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>id</title>
+    <style>
+        #id {
+            width: 80%;
+            height: 3cm;
+            margin-top: 20vh;
+            /* border: 1px solid black; */
+            border-radius: 4px;
+            margin-left: 10%;
+            box-shadow: 0px 0px 8px 2px black;
+        }
+
+        table {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border-collapse: collapse;
+            color: white;
+            font-weight: bold;
+            border-radius: 4px;
+            background-image: linear-gradient(to left top, rgb(120, 4, 173), rgb(4, 87, 18));
+        }
+
+        td {
+            /* border-left: 1px solid black; */
+            box-sizing: border-box;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="home.html"><button>Back</button></a>
+
+    <div id="id">
+        <table>
+            <tr>
+                <td>ሙሉ ስም : <b><span id="fname"></span></b></td>
+                <td>የአያት ስም : <b><span id="lname"></span></b></td>
+            </tr>
+            <tr>
+                <td>የትዉልድ ዘመን : <b><span id="year"></span></b></td>
+                <td>ፋይዳ FAN : <b><span id="fan"></span></b></td>
+            </tr>
+            <tr>
+                <td>ክልል : <b><span id="rig"></span></b></td>
+                <td> የእጅ አሻራ መለያ ፡ <b><u>YT4RXEPK89JHU</u></b></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        let fname = localStorage.getItem("fname");
+        let lname = localStorage.getItem("lname");
+        let year = localStorage.getItem("year");
+        let fan = localStorage.getItem("fan");
+        let rig = localStorage.getItem("rig");
+        let printed = localStorage.getItem("printed");
+
+
+        document.getElementById("fname").innerHTML = fname;
+        document.getElementById("lname").innerHTML = lname;
+        document.getElementById("year").innerHTML = year;
+        document.getElementById("fan").innerHTML = fan;
+        document.getElementById("rig").innerHTML = rig;
+
+    </script>
+</body>
+
+</html>
