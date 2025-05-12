@@ -51,13 +51,13 @@
             height: 2cm;
             border: 3px solid red;
             border-radius: 9px;
+            background-image:Url(finger_print.gif);
+            background-size:100% 100%;
+            background-repeat:no-repeat;
+            
         }
 
-        img {
-            width: 100%;
-            height: 100%;
-            border-radius: 9px;
-        }
+   
 
         button {
             width: 100%;
@@ -146,8 +146,10 @@
         <tr>
             <td>የእጅ አሻራ</td>
             <td>
-                <div id="scan_box">
-                    <img id="green"src="finger_print.gif" onmouseover="printed()">
+                <div id="scan_box" onmouseover="printed()">
+              
+                    
+                    </div>
                 </div>
             </td>
             <td>
@@ -185,7 +187,7 @@
         function printed() {
             document.getElementById("correct6").style.backgroundColor = "green";
             // window.vibrate(100);
-  document.getElementById("green").src="green.jpeg";
+  document.getElementById("scan_box").style.backgroundImage="Url(green.jpeg)";
   document.getElementById("scan_box").style.border="3px solid green";
   document.getElementById("sound").play();
             localStorage.setItem("printed", "true");
